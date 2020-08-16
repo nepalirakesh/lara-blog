@@ -64,8 +64,7 @@ class PostController extends Controller
 
        $post = Post::find($id);
        if(auth()->user()->id!==$post->user_id){
-            $user_id=auth()->user()->id;
-            $user=User::find($user_id);
+           $user=auth()->user();
             return redirect()->route('user_blog')->with('error','unauthorize route');
        }
 
@@ -97,7 +96,7 @@ class PostController extends Controller
         $post=Post::find($id);
 
         if(auth()->user()->id!==$post->user_id){
-            $user_id=auth()-user()->id;
+            $user_id=auth()->user()->id;
             $user=User::find($user_id);
             $posts=$user->posts;
 

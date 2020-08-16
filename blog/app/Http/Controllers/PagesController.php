@@ -10,7 +10,7 @@ class PagesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('getHome', 'getAbout', 'getContact', 'getShowPost');
+        $this->middleware('auth')->only('getUserPost');
     }
 
     public function getHome()

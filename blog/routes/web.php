@@ -26,3 +26,10 @@ Route::resource('posts','PostController');
 Auth::routes();
 
 
+
+
+
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/login', 'AdminLoginController@showLoginForm')->name('admin.show.login');
+Route::post('/admin/login', 'AdminLoginController@login')->name('admin.submit.login');
+Route::get('/admin', 'AdminController@index')->name('admin_home');
